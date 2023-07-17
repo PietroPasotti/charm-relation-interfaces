@@ -26,7 +26,7 @@ flowchart LR
 
 ### Requirer
 
-- Is expected to publish the url at which the server is reachable.
+- Is expected to publish the host at which the server is reachable.
 - Is expected to run a server supporting one or more tracing protocols such as [OTLP](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/otlp.md#opentelemetry-protocol-specification).
 - Is expected to publish, for each protocol it accepts, the port at which the server is listening along with the name of the supported protocol.
 
@@ -34,7 +34,7 @@ flowchart LR
 ## Relation Data
 ### Requirer
 
-The requirer exposes via its application databag a single `url`, at which the server is reachable, and a list of `ingesters` = ports and protocols.
+The requirer exposes via its application databag a single `host`, at which the server is reachable, and a list of `ingesters` = ports and protocols.
 Each ingester port supports a certain tracing protocol, such as OTLP_GRPC or Jaeger. 
 The full list of supported trace protocols can change, but those supported by Tempo at the time of writing are:
 
@@ -51,7 +51,7 @@ The full list of supported trace protocols can change, but those supported by Te
 ```yaml
 # unit_data: <empty> 
 application_data: 
-  url: "http://foo.bar/my-model-my-unit-0"
+  host: "foo.bar/my-model-my-unit-0"
   ingesters: 
     - protocol: otlp_grpc
       port: 1234
