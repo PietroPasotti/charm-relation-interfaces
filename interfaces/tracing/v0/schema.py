@@ -42,7 +42,7 @@ class Ingester(BaseModel):
 
 class TracingRequirerData(BaseModel):
     host: str
-    ingesters: Json[List[Ingester]]
+    ingesters: List[Ingester]
 
 
 class RequirerSchema(DataBagSchema):

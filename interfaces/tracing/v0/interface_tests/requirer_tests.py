@@ -33,9 +33,9 @@ def test_no_data_on_joined(output_state: State):
             interface='tracing',
             remote_app_name='remote',
             local_app_data={
-                "host": "foo.com",
+                "host": "foo.org",
                 "ingesters": json.dumps([
-                    {"type": "otlp_grpc",
+                    {"protocol": "otlp_grpc",
                      "port": "4242"}
                 ])
             }
